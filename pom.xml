@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.nms</groupId>
+        <artifactId>integration</artifactId>
+        <version>15.2.0.40</version>
+    </parent>
+    <groupId>com.ericsson.oss.mediation.transportcim.models.flow</groupId>
+    <artifactId>controller6610-transportcim-mediation-flow-model</artifactId>
+    <version>1.1.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <ericsson.scm.url>scm:git:[fetch=]ssh://gerritmirror-ha.lmera.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.mediation.transportcim.models.flow/controller6610-transportcim-mediation-flow-model[push=]ssh://gerrit.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.mediation.transportcim.models.flow/controller6610-transportcim-mediation-flow-model</ericsson.scm.url>
+        <version.model-processing>1.16.3</version.model-processing>
+    </properties>
+
+    <!--Profile to deploy latest site-->
+    <profiles>
+        <profile>
+            <id>site_latest</id>
+            <distributionManagement>
+                <site>
+                    <id>site</id>
+                    <name>Site</name>
+                    <url>${site.url}/controller6610-transportcim-mediation-flow-model/latest</url>
+                </site>
+            </distributionManagement>
+        </profile>
+
+        <!--Profile to stage site for review-->
+        <profile>
+            <id>site_review</id>
+            <distributionManagement>
+                <site>
+                    <id>site</id>
+                    <name>Site</name>
+                    <url>${site.url}</url>
+                </site>
+            </distributionManagement>
+        </profile>
+    </profiles>
+    <!--Deployment of versioned documentation-->
+    <distributionManagement>
+        <site>
+            <id>site</id>
+            <name>Site</name>
+            <url>${site.url}/controller6610-transportcim-mediation-flow-model/${project.version}</url>
+        </site>
+    </distributionManagement>
+    
+    <modules>
+        <module>ERICcontroller6610tcimmedflowmodel_CXP9042187</module>
+        <module>controller6610-transportcim-mediation-flow-model-jar</module>
+    </modules>
+
+    <scm>
+        <developerConnection>${ericsson.scm.url}</developerConnection>
+        <connection>${ericsson.scm.url}</connection>
+        <tag>HEAD</tag>
+    </scm>
+</project>
